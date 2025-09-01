@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: aqua;
+            padding: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: aquamarine;
+            padding: 5px;
+        }
+
+        nav > p {
+            padding: 5px;
+        }
+
+        nav > input {
+            width: 35px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Netflix</h1>
+    </header>
+    <nav>
+        <p>Home filmes series</p>
+        <input type="range" name="tema" id="tema" max="1" value="0">
+    </nav>
+    <main>
+        <h1>Filme</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae officia, delectus repudiandae quod eius nam blanditiis veniam maxime molestiae quia obcaecati totam asperiores accusantium facilis hic autem voluptatibus excepturi optio!
+        Ipsam id, asperiores soluta impedit quod iusto! Corrupti minima velit laudantium. Atque aliquam saepe, similique ipsam itaque harum illum in perspiciatis? Ea sapiente ipsum officia dolor delectus. Tenetur, fugit animi.
+        Incidunt natus neque cumque ipsam nihil alias soluta inventore nesciunt voluptate adipisci eum aperiam accusantium, voluptatum eligendi. Enim vel, aperiam magnam dignissimos ipsa provident possimus tempora. Reiciendis exercitationem incidunt qui?
+        Adipisci eaque distinctio voluptatem architecto eos labore quos quisquam corporis iure sit, id recusandae voluptates dolores praesentium ratione asperiores facere beatae! Iste asperiores facilis ab facere natus qui modi laboriosam!
+        Minima officia deserunt dolore numquam ut quibusdam maxime! Necessitatibus tempore, fugiat, excepturi aspernatur dicta repellat a cumque neque obcaecati deserunt doloribus aliquam maxime vero! Nisi excepturi quae est tenetur quaerat.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde iusto autem est beatae, accusantium repudiandae quas voluptatum numquam nobis sed, in voluptate ipsa quo modi sunt? Earum possimus consectetur quibusdam.
+        Iure minus fugit earum accusamus voluptatum laboriosam veritatis, rerum, officiis libero, dicta possimus quidem reprehenderit molestiae et vel molestias ducimus fuga quas totam quis sed veniam fugiat eos maxime. Repudiandae.
+        Eligendi repellat odit obcaecati, debitis nam reiciendis perferendis beatae ipsam sed expedita inventore, iusto non, perspiciatis dolores eos iure quam natus enim necessitatibus? Beatae, provident tenetur. Vitae amet laudantium ut?
+        Est quasi adipisci quidem veniam ducimus? Commodi excepturi rem aliquam asperiores dolorum beatae facilis qui autem totam at itaque inventore possimus necessitatibus odit nemo atque architecto, accusamus consequuntur repudiandae nesciunt.
+        Cum delectus aperiam possimus ducimus eligendi exercitationem, culpa itaque tempora non nesciunt voluptatibus pariatur quibusdam dolores optio minus ut reiciendis modi, tenetur libero doloribus iusto voluptatum quos, quod vel? Ullam.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit eos dolores quidem corrupti illum molestias odio quam, soluta porro. Maiores consequuntur temporibus veniam numquam quod nisi nihil facere deleniti laboriosam.
+        Quod quasi culpa ad, provident dolores vitae illum tenetur dolor in deserunt labore hic aspernatur modi quas et vel libero, suscipit laboriosam id. Et soluta eius ea aspernatur debitis nobis!
+        Minus eaque voluptas ipsum, id soluta aperiam consequatur, corrupti quas corporis rerum non tempora! Provident accusantium eum beatae voluptas quo ad adipisci, optio odio repudiandae, doloremque magni alias non aut.
+        Nemo, nihil explicabo architecto dolorum temporibus recusandae dicta quia excepturi voluptatem? Cum possimus, saepe repellat ipsum ipsa modi facilis repellendus aliquid incidunt deserunt ad placeat dolores ducimus perspiciatis sapiente libero.
+        Totam excepturi, consequatur temporibus, explicabo quam molestias expedita ea quas accusantium adipisci ex sit odio aliquid itaque quia iure, nemo iusto maiores illo fugiat. Eius magnam eaque ipsam accusamus vel!</p>
+    </main>
+    <script>
+        var barra = document.querySelector('input')
+        barra.addEventListener('input', tema)
+        var sheader = document.querySelector('header').style
+        var snav = document.getElementsByTagName('nav')[0].style
+        function tema() {
+            barra.value == 1?tema_escuro():tema_claro()
+        }
+
+        function tema_escuro() {
+            sheader.backgroundColor = 'black'
+            sheader.color = 'red'
+            snav.backgroundColor = 'lightgray'
+            sheader.transition = 'background-color .5s, color 1s'
+            snav.transition = 'background-color 1s'
+        }
+
+        function tema_claro() {
+            sheader.backgroundColor = 'aqua'
+            sheader.color = 'black'
+            snav.backgroundColor = 'aquamarine'
+        }
+    </script>
+</body>
+</html>
