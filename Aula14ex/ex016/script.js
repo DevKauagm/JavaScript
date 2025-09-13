@@ -6,22 +6,24 @@ function contar() {
     if (inicio.length == 0 || fim.length == 0 || passo.length == 0) {
         saida.innerText = 'Impossivel contar'
     } else {
-        if (passo == 0) {
-            alert('não é possível ter passo 0, mas foi considerado como 1')
+        if (passo <= 0) {
+            alert('não é possível ter passo 0 ou menor, mas foi considerado como 1')
             passo = 1
         }
-        var text = ''
+        var text = 'Contando: '
         inicio = Number(inicio)
         fim = Number(fim)
         passo = Number(passo)
-        for (inicio; inicio < fim; inicio += passo) {
-            text += `${inicio}&#x1F449;`
-        }
-        if (passo >= fim) {
-            text += `${fim}&#x1F3F4;`
+        if (fim >= inicio) {
+            for (var c = inicio; c < fim; c += passo) {
+                text += `${c}&#x1F449;`
+            }
         } else {
-            text += `${inicio}&#x1F3F4;`
+            for (var c = inicio; c > fim; c -= passo) {
+                text += `${c}&#x1F449;`
+            }
         }
+        text += `${fim}&#x1F3F4;`
         saida.innerHTML = text
     }
 }
