@@ -10,20 +10,20 @@ function contar() {
             alert('não é possível ter passo 0 ou menor, mas foi considerado como 1')
             passo = 1
         }
-        var text = 'Contando: '
+        var text = 'Contando: <br>'
         inicio = Number(inicio)
         fim = Number(fim)
         passo = Number(passo)
         if (fim >= inicio) {
-            for (var c = inicio; c < fim; c += passo) {
+            for (var c = inicio; c <= fim; c += passo) {
                 text += `${c}&#x1F449;`
             }
         } else {
-            for (var c = inicio; c > fim; c -= passo) {
+            for (var c = inicio; c >= fim; c -= passo) {
                 text += `${c}&#x1F449;`
             }
         }
-        text += `${fim}&#x1F3F4;`
+        text += `&#x1F3F4;`
         saida.innerHTML = text
     }
 }
