@@ -1,13 +1,13 @@
-var nums = []
-var saida = document.getElementById('saida')
+const nums = []
+const saida = document.getElementById('saida')
 function adicionar() {
-    let num = document.getElementById('num')
+    const num = document.getElementById('num')
     if (nums.indexOf(Number(num.value)) != -1 || num.value.length == 0 || Number(num.value) > 100 || Number(num.value) < 1) {
         alert('[ERRO]-Não foi digitado nenhum número ou o número não está entre 1 e 100 ou o número já foi adicionado.')
     } else {
         saida.innerHTML = ''
         nums.push(Number(num.value))
-        let op = document.createElement('option')
+        const op = document.createElement('option')
         op.innerText = `Valor ${num.value} adicionado.`
         document.getElementById('ad').appendChild(op)
     }
